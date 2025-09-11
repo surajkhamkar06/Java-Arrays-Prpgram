@@ -1,0 +1,38 @@
+package package1;
+
+import java.util.Arrays;
+
+public class PlusOne {
+
+    public static void main(String[] args) {
+        PlusOne obj = new PlusOne();
+
+        // Example input
+        int[] digits = {1, 2, 3};
+
+        // Call the method
+        int[] result = obj.plusOne(digits);
+
+        // Print the result
+        System.out.println("Result: " + Arrays.toString(result));
+    }
+
+    public int[] plusOne(int[] digits)
+    {
+        int n = digits.length;
+
+        for (int i = n - 1; i >= 0; i--) 
+        {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+            digits[i] = 0;
+        }
+
+        int[] newNumber = new int[n + 1];
+        newNumber[0] = 1;
+
+        return newNumber;
+    }
+}
